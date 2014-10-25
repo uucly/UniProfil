@@ -1,0 +1,22 @@
+Projektaquisition,3
+Ingenieurvermessung 2,1
+Monitoring und kinematische Vermessung,3
+Projektbezogene Analyse von Ingenieurnetzen,4
+Ingenieurphotogrammetrie und 3D-Messverfahren,4
+Geometrische Objektmodellierung in 2D/3D/4D,3
+Ausgewählte Themen zur Schätztheorie,3
+Straßenwesen für Geodäten,1
+Analyse und Entwurf multisensorieller Systeme,3
+Antennen und Antennensysteme,4.5
+Fernerkundung atmosphärischer Zustandsgrößen,4
+Prinzipien der Sensorfusion in integrierten Navigationssystemen,3
+Allgemeine Meteorologie,7
+Steuerungstechnik für Roboter,3
+Struktur- und Objektextraktion in 2D und 3D,4
+Industrielle Bildverarbeitung und Machine Vision,3
+Aktive Sensorik für Computer Vision,3
+Geodetic Reference Frames and Systems,1
+Kreisel und INS,3
+SAR und InSAR-Fernerkundung,3
+Geodetic Application of SAR Interferometry,4
+Geodätische Astronomie,4
