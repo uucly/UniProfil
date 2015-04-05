@@ -2,6 +2,7 @@
 import javax.swing.JMenuBar
 import javax.swing.JMenu
 import javax.swing.JLabel
+import java.awt.event.ActionListener
 
 object ProfilMenue extends JMenuBar {
 
@@ -16,7 +17,7 @@ object ProfilMenue extends JMenuBar {
     val menueAufbau = new JMenu("Aufbaufächer")
     val menueErgaenzung = new JMenu("Ergänzungsfächer")
     val menueKey = new JMenu("Schlüsselqualifikationen")
-
+    val newWindow = new JMenu("new Window");
     menueProfil.add(HinzProfil._checkBox)
     menueProfil.add(BreunigProfil._checkBox)
     menueProfil.add(HennesProfil._checkBox)
