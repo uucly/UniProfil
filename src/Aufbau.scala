@@ -4,7 +4,7 @@ import javax.swing.JCheckBoxMenuItem
 
 object Aufbau {
 
-  
+
   val schaetztheorie = new JCheckBoxMenuItem("Schätztheorie")
   schaetztheorie.addItemListener(new AufbauProfilListener(6))
 

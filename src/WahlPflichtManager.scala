@@ -5,6 +5,8 @@ object WahlPflichtManager {
 
   val wahlPflichtList = loadWahlFile("WahlPflichtModule.txt");
   
+  
+  
   def loadWahlFile(fileName: String) : MutableList[WahlPflichtModul] = {
     val list = new MutableList[WahlPflichtModul]();
     val fileLines = Source.fromFile(fileName).getLines

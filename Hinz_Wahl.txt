@@ -1,18 +1,18 @@
-Projekt Computer Vision,4
-Industrielle Bildverarbeitung und Machine Vision,3
-Aktive Sensorik für Computer Vision,3
-Projekt Fernerkundung und Luftbildphotogrammetrie,4
-Visualisierung von Geodaten in 2D/3D/4D,3
-Flächenerfassung,3
-Ingenieurphotogrammetrie und 3D-Messverfahren,4
-Geometrische Objektmodellierung in 2D/3D/4D,3
-Projektbezogene Analyse von Ingenieurnetzen,4
-Ausgewählte Themen zur Schätztheorie,3
-Mobile GIS,3
-OO-Modellierung in GIS,6
-3D-Tools für geowissenschaftliche Anwendungen,3
-3D/4D GIS,4
-Augmented Reality,4
-Text- and Data Mining in der Geoinformatik,3
-Geodetic Application of SAR Interferometry,4
-Ausgewählte Kapitel zu GNSS,4
+3D-Tools für geowissenschaftliche Anwendungen
+3D/4D GIS
+Aktive Sensorik für Computer Vision
+Augmented Reality
+Ausgewählte Kapitel zu GNSS
+Ausgewählte Themen zur Schätztheorie
+Flächenerfassung
+Geodetic Application of SAR Interferometry
+Geometrische Objektmodellierung in 2D/3D/4D
+Industrielle Bildverarbeitung und Machine Vision
+Ingenieurphotogrammetrie und 3D-Messverfahren
+Mobile GIS
+OO-Modellierung in GIS
+Projekt Computer Vision
+Projekt Fernerkundung und Luftbildphotogrammetrie
+Projektbezogene Analyse von Ingenieurnetzen
+Text- and Data Mining in der Geoinformatik
+Visualisierung von Geodaten in 2D/3D/4D

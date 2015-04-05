@@ -1,22 +1,22 @@
-Projektaquisition,3
-Ingenieurvermessung 2,1
-Monitoring und kinematische Vermessung,3
-Projektbezogene Analyse von Ingenieurnetzen,4
-Ingenieurphotogrammetrie und 3D-Messverfahren,4
-Geometrische Objektmodellierung in 2D/3D/4D,3
-Ausgewählte Themen zur Schätztheorie,3
-Straßenwesen für Geodäten,1
-Analyse und Entwurf multisensorieller Systeme,3
-Antennen und Antennensysteme,4.5
-Fernerkundung atmosphärischer Zustandsgrößen,4
-Prinzipien der Sensorfusion in integrierten Navigationssystemen,3
-Allgemeine Meteorologie,7
-Steuerungstechnik für Roboter,3
-Struktur- und Objektextraktion in 2D und 3D,4
-Industrielle Bildverarbeitung und Machine Vision,3
-Aktive Sensorik für Computer Vision,3
-Geodetic Reference Frames and Systems,1
-Kreisel und INS,3
-SAR und InSAR-Fernerkundung,3
-Geodetic Application of SAR Interferometry,4
-Geodätische Astronomie,4
+Aktive Sensorik für Computer Vision
+Allgemeine Meteorologie
+Analyse und Entwurf multisensorieller Systeme
+Antennen und Antennensysteme
+Ausgewählte Themen zur Schätztheorie
+Fernerkundung atmosphärischer Zustandsgrößen
+Geodetic Application of SAR Interferometry
+Geodetic Reference Frames and Systems
+Geodätische Astronomie
+Geometrische Objektmodellierung in 2D/3D/4D
+Industrielle Bildverarbeitung und Machine Vision
+Ingenieurphotogrammetrie und 3D-Messverfahren
+Ingenieurvermessung
+Kreisel und INS
+Monitoring und kinematische Vermessung
+Prinzipien der Sensorfusion in integrierten Navigationssystemen
+Projektaquisition
+Projektbezogene Analyse von Ingenieurnetzen
+SAR und InSAR-Fernerkundung
+Steuerungstechnik für Roboter
+Straßenwesen für Geodäten
+Struktur- und Objektextraktion in 2D und 3D

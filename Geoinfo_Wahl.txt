@@ -1,20 +1,19 @@
-Geodateninfrastruktur und Web-Dienste,4
-Mobile GIS,3
-GIS-Analysen,3
-Geodateninfrastruktur und Web-Dienste,4
-Mobile GIS,3
-GIS-Analysen,3
-OO-Modellierung in GIS,6
-3D-Tools für geowissenschaftliche Anwendungen,3
-Augmented Reality,4
-Geosensornetworks/Sensor DB,3
-Text- and Data Mining in der Geoinformatik,3
-Deformationsanalyse,4
-Projekt Computer Vision,4
-Visualisierung von Geodaten in 2D/3D/4D,3
-Flächenerfassung,3
-Monitoring und kinematische Vermessung,3
-Projektbezogene Analyse von Ingenieurnetzen,4
-Geometrische Objektmodellierung in 2D/3D/4D,3
-Ausgewählte Themen zur Schätztheorie,3
-Geodetic Reference Frames and Systems,1
+3D-Tools für geowissenschaftliche Anwendungen
+Augmented Reality
+Ausgewählte Themen zur Schätztheorie
+Deformationsanalyse
+Flächenerfassung
+GIS-Analysen
+GIS-AnalysenGeodateninfrastruktur und Web-Dienste
+Geodateninfrastruktur und Web-Dienste
+Geodetic Reference Frames and Systems
+Geometrische Objektmodellierung in 2D/3D/4D
+Geosensornetworks/Sensor DB
+Mobile GIS
+Mobile GIS
+Monitoring und kinematische Vermessung
+OO-Modellierung in GIS
+Projekt Computer Vision
+Projektbezogene Analyse von Ingenieurnetzen
+Text- and Data Mining in der Geoinformatik
+Visualisierung von Geodaten in 2D/3D/4D
