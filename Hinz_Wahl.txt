@@ -1,6 +1,6 @@
-3D-Tools für geowissenschaftliche Anwendungen
+3D-Tools fuer geowissenschaftliche Anwendungen
 3D/4D GIS
-Aktive Sensorik für Computer Vision
+Aktive Sensorik fuer Computer Vision
 Augmented Reality
 Ausgewählte Kapitel zu GNSS
 Ausgewählte Themen zur Schätztheorie

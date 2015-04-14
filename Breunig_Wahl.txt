@@ -1,4 +1,4 @@
-3D-Tools für geowissenschaftliche Anwendungen
+3D-Tools fuer geowissenschaftliche Anwendungen
 Augmented Reality
 Ausgewählte Themen zur Schätztheorie
 Deformationsanalyse
@@ -9,7 +9,6 @@ Geodateninfrastruktur und Web-Dienste
 Geodetic Reference Frames and Systems
 Geometrische Objektmodellierung in 2D/3D/4D
 Geosensornetworks/Sensor DB
-Mobile GIS
 Mobile GIS
 Monitoring und kinematische Vermessung
 OO-Modellierung in GIS

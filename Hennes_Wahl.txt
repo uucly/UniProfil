@@ -1,4 +1,4 @@
-Aktive Sensorik für Computer Vision
+Aktive Sensorik fuer Computer Vision
 Allgemeine Meteorologie
 Analyse und Entwurf multisensorieller Systeme
 Antennen und Antennensysteme
@@ -17,6 +17,6 @@ Prinzipien der Sensorfusion in integrierten Navigationssystemen
 Projektaquisition
 Projektbezogene Analyse von Ingenieurnetzen
 SAR und InSAR-Fernerkundung
-Steuerungstechnik für Roboter
-Straßenwesen für Geodäten
+Steuerungstechnik fuer Roboter
+Straßenwesen fuer Geodäten
 Struktur- und Objektextraktion in 2D und 3D

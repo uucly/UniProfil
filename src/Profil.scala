@@ -5,6 +5,7 @@ import javax.swing.JRadioButton
 import javax.swing.JCheckBoxMenuItem
 import javax.swing.JLabel
 import scala.io.Source
+import scala.collection.mutable.MutableList
 
 trait Profil {
 
@@ -22,6 +23,7 @@ trait Profil {
     pflichtPoints = 0
     wahlPoints = 0
   }
+
   def addProfil(list: Map[String, Int], panel: JPanel) = {
     for (pflicht <- list) {
       val button = new JRadioButton(pflicht._1)
@@ -30,12 +32,20 @@ trait Profil {
     }
   }
 
-  def loadWahlFile(fileName: String, panel: TBlaPanel) = {
-    val fileLines = Source.fromFile(fileName).getLines
-    fileLines.foreach(line => {
-      val l = line.split(",")
-      val button = new JRadioButton(l(0))
-      button.addItemListener(new WahlProfilListener(l(1).toDouble, this))
+  def loadWahlModule(wahlModul: List[String]) = {
+    WahlPflichtManager.wahlPflichtList.filter(modul => wahlModul.contains(modul.getName))
+  }
+
+  def loadWahlFile(moduls: MutableList[WahlPflichtModul], panel: TBlaPanel) = {
+    moduls.foreach(modul => {
+      val button = new JRadioButton(modul.getName)
+      button.addItemListener(new WahlProfilListener(modul.getPoints, this))
+      if(modul.inUse) 
+        button.setEnabled(false) 
+      else {
+        modul.inUse = true;
+      }
+      println(modul.inUse)
       panel.add(button)
     })
   }

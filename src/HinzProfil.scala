@@ -1,6 +1,7 @@
 import javax.swing.JRadioButton
 import javax.swing.JLabel
 import javax.swing.JCheckBoxMenuItem
+import scala.io.Source
 
 object HinzProfil extends Profil {
 
@@ -10,11 +11,13 @@ object HinzProfil extends Profil {
 
   _pflichtMap = Map(("Struktur- und Objektextraktion in 2D und 3D", 4), ("Bildsequenzanalyse", 2), ("Statistische Mustererkennung\nWissensbasierte Bildanalyse", 5))
 
+  var wahlModul = Source.fromFile("Hinz_Wahl.txt").getLines.toList;
+  
   def load(panel: TBlaPanel) = {
 
     choosenPanel = panel
     panel.removeAll()
-  
+
     panel.add(new JLabel("-----------------------------------------------------------------"))
     panel.add(new JLabel("                              Pflicht"))
     panel.add(new JLabel("-----------------------------------------------------------------"))
@@ -25,8 +28,8 @@ object HinzProfil extends Profil {
     panel.add(new JLabel("                              Wahl"))
     panel.add(new JLabel("-----------------------------------------------------------------"))
 
-    loadWahlFile("Hinz_Wahl.txt", panel)
- 
+    val modulsToShow = loadWahlModule(wahlModul);
+    loadWahlFile(modulsToShow, panel)
     panel.revalidate()
   }
 }

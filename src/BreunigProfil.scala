@@ -11,6 +11,8 @@ object BreunigProfil extends Profil {
   name = "Breunig"
   _pflichtMap = Map(("GeoDB", 4), ("3D/4D GIS", 4), ("Projekt Geoinformatik", 4))
 
+  var wahlModul = Source.fromFile("Breunig_Wahl.txt").getLines.toList;
+  
   def load(panel: TBlaPanel) = {
 
     choosenPanel = panel
@@ -27,7 +29,8 @@ object BreunigProfil extends Profil {
     panel.add(new JLabel("                              Wahl"))
     panel.add(new JLabel("-----------------------------------------------------------------"))
 
-    loadWahlFile("Geoinfo_Wahl.txt", panel)
+    val modulsToShow = loadWahlModule(wahlModul);
+    loadWahlFile(modulsToShow, panel)
     panel.revalidate()
   }
 }

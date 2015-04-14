@@ -1,6 +1,7 @@
 import javax.swing.JLabel
 import javax.swing.JRadioButton
 import javax.swing.JCheckBoxMenuItem
+import scala.io.Source
 
 object HennesProfil extends Profil {
 
@@ -9,6 +10,8 @@ object HennesProfil extends Profil {
   name = "Hennes"
 
   _pflichtMap = Map(("Dimensionelle Vermessungsverfahren", 8), ("Ausgewählte Kapitel zu GNSS", 2))
+
+  var wahlModul = Source.fromFile("Hennes_Wahl.txt").getLines.toList;
 
   def load(panel: TBlaPanel) = {
 
@@ -25,7 +28,8 @@ object HennesProfil extends Profil {
     panel.add(new JLabel("                              Wahl"))
     panel.add(new JLabel("-----------------------------------------------------------------"))
 
-    loadWahlFile("Hennes_Wahl.txt", panel)
+    val modulsToShow = loadWahlModule(wahlModul);
+    loadWahlFile(modulsToShow, panel)
     panel.revalidate()
   }
 }

@@ -1,4 +1,4 @@
-3D-Tools für geowissenschaftliche Anwendungen
+3D-Tools fuer geowissenschaftliche Anwendungen
 Ausgewählte Kapitel zu GNSS
 Ausgewählte Themen zur Schätztheorie
 Deformationsanalyse
