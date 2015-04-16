@@ -4,7 +4,6 @@ import javax.swing.JLabel
 import javax.swing.JCheckBoxMenuItem
 import scala.io.Source
 import panels.TModulPanel
-import profils.Profil
 import listener.ProfilListener
 
 object HinzProfil extends Profil {

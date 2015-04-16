@@ -1,7 +1,4 @@
-
 package panels
-
-import panels.TModulPanel
 
 object WahlPanel extends TModulPanel {
 

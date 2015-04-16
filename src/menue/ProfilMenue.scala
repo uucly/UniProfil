@@ -14,7 +14,6 @@ import listener.LinkMouseListener
 import profils.HeckProfil
 import panels.WahlPanel
 import profils.ErgaenzungsProfil
-import menue.Aufbau
 
 object ProfilMenue extends JMenuBar {
 

@@ -1,4 +1,6 @@
 
+package start
+
 import javax.swing.JFrame
 import java.awt.BorderLayout
 import java.awt.GridLayout
@@ -7,8 +9,6 @@ import javax.swing.border.CompoundBorder
 import javax.swing.border.LineBorder
 import java.awt.Color
 import javax.swing.JScrollPane
-import java.awt.Component
-import java.awt.ComponentOrientation
 import panels.RightPanel
 import panels.InfoPanel
 import panels.WahlPanel
