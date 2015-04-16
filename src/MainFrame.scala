@@ -9,6 +9,10 @@ import java.awt.Color
 import javax.swing.JScrollPane
 import java.awt.Component
 import java.awt.ComponentOrientation
+import panels.RightPanel
+import panels.InfoPanel
+import panels.WahlPanel
+import menue.ProfilMenue
 
 object MainFrame extends JFrame {
 
