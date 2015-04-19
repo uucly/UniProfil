@@ -7,16 +7,16 @@ import scala.io.Source
 import panels.TModulPanel
 import listener.ProfilListener
 
-object BreunigProfil extends Profil {
+object BreunigProfil extends TProfil {
 
   _checkBox = new JCheckBoxMenuItem("Breunig Profil")
   _checkBox.addItemListener(new ProfilListener(this))
   name = "Breunig"
   _pflichtMap = Map(("GeoDB", 4), ("3D/4D GIS", 4), ("Projekt Geoinformatik", 4))
 
-  var wahlModul = Source.fromFile("Breunig_Wahl.txt").getLines.toList;
+  wahlModul = Source.fromFile("Breunig_Wahl.txt").getLines.toList;
   
-  def load(panel: TModulPanel) = {
+  /*def load(panel: TModulPanel) = {
 
     choosenPanel = panel
     panel.removeAll()
@@ -32,8 +32,8 @@ object BreunigProfil extends Profil {
     panel.add(new JLabel("                              Wahl"))
     panel.add(new JLabel("-----------------------------------------------------------------"))
 
-    val modulsToShow = loadWahlModule(wahlModul);
+    val modulsToShow = loadWahlModule();
     loadWahlFile(modulsToShow, panel)
     panel.revalidate()
-  }
+  }*/
 }

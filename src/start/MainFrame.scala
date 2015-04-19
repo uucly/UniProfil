@@ -11,8 +11,8 @@ import java.awt.Color
 import javax.swing.JScrollPane
 import panels.RightPanel
 import panels.InfoPanel
-import panels.WahlPanel
-import menue.ProfilMenue
+import panels.LeftPanel
+import menue.Menue
 
 object MainFrame extends JFrame {
 
@@ -20,13 +20,13 @@ object MainFrame extends JFrame {
     init
 
     setPanelBorder(RightPanel)
-    setPanelBorder(WahlPanel)
+    setPanelBorder(LeftPanel)
 
     val scrollPanelLeft = new JScrollPane
     val scrollPanelRight = new JScrollPane
     
     scrollPanelLeft.setViewportView(RightPanel)
-    scrollPanelRight.setViewportView(WahlPanel)
+    scrollPanelRight.setViewportView(LeftPanel)
 
     val mainPanel = new JPanel
     mainPanel.setLayout(new GridLayout(0, 3))
@@ -34,7 +34,7 @@ object MainFrame extends JFrame {
     mainPanel.add(scrollPanelRight)
     mainPanel.add(InfoPanel)
     add(mainPanel, BorderLayout.CENTER)
-    add(ProfilMenue, BorderLayout.NORTH)
+    add(Menue, BorderLayout.NORTH)
     setVisible(true)
   }
   

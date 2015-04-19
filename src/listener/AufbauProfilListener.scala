@@ -5,7 +5,7 @@ package listener
 import java.awt.event.ItemListener
 import java.awt.event.ItemEvent
 import panels.InfoPanel
-import menue.ProfilMenue
+import menue.Menue
 
 class AufbauProfilListener(private var creditPoints: Double) extends ItemListener {
 
@@ -13,9 +13,9 @@ class AufbauProfilListener(private var creditPoints: Double) extends ItemListene
     val selected = e.getStateChange() equals ItemEvent.SELECTED
 
     if (selected) {
-      ProfilMenue.aufbauCreditPoints += creditPoints
+      Menue.aufbauCreditPoints += creditPoints
     } else {
-      ProfilMenue.aufbauCreditPoints -= creditPoints
+      Menue.aufbauCreditPoints -= creditPoints
     }
 
     InfoPanel.load

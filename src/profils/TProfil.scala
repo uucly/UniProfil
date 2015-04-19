@@ -12,17 +12,18 @@ import wahlPflicht.WahlPflichtModul
 import wahlPflicht.WahlPflichtManager
 import listener.WahlProfilListener
 
-trait Profil {
+trait TProfil {
 
   var name: String = null
   var choosenPanel: TModulPanel = null
   var _checkBox: JCheckBoxMenuItem = null
   var _pflichtMap: Map[String, Int] = null
+  var wahlModul: List[String] = null;
 
   var pflichtPoints = 0d
   var wahlPoints = 0d
 
-  def load(panel: TModulPanel)
+  //def load(panel: TModulPanel)
   def getAllPoints = _pflichtMap.foldLeft(0)(_ + _._2)
   def resetPoints = {
     pflichtPoints = 0
@@ -37,21 +38,7 @@ trait Profil {
     }
   }
 
-  def loadWahlModule(wahlModul: List[String]) = {
+  def loadWahlModule() = {
     WahlPflichtManager.wahlPflichtList.filter(modul => wahlModul.contains(modul.getName))
-  }
-
-  def loadWahlFile(moduls: MutableList[WahlPflichtModul], panel: TModulPanel) = {
-    moduls.foreach(modul => {
-      val button = new JRadioButton(modul.getName)
-      button.addItemListener(new WahlProfilListener(modul.getPoints, this))
-      if(modul.inUse) 
-        button.setEnabled(false) 
-      else {
-        modul.inUse = true;
-      }
-      println(modul.inUse)
-      panel.add(button)
-    })
   }
 }

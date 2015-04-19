@@ -5,10 +5,10 @@ package listener
 import java.awt.event.ItemEvent
 import java.awt.event.ItemListener
 import panels.InfoPanel
-import profils.Profil
-import menue.ProfilMenue
+import profils.TProfil
+import menue.Menue
 
-class ProfilListener(private val profil: Profil) extends ItemListener {
+class ProfilListener(private val profil: TProfil) extends ItemListener {
 
   override def itemStateChanged(e: ItemEvent): Unit = {
     val selected = e.getStateChange() equals ItemEvent.SELECTED
@@ -22,22 +22,25 @@ class ProfilListener(private val profil: Profil) extends ItemListener {
   /////////////
   //Functions//
   def updateProfilPanel = {
-    if (ProfilMenue.isCurrentPanelInUse) {
-      ProfilMenue.unCheckCurrentProfilBox
+    if (Menue.isCurrentPanelInUse) {
+      Menue.unCheckCurrentProfilBox
       profil.resetPoints
     }
 
-    ProfilMenue.setCurrentProfil(profil)
-
-    profil.load(ProfilMenue.currentPanel)
+    Menue.setCurrentProfil(profil)
+    profil.choosenPanel = Menue.currentPanel
+    Menue.currentPanel.load()
     InfoPanel.load
-    ProfilMenue.switchCurrentPanel
+    Menue.switchCurrentPanel
   }
 
+  /**
+   * Panel muss ueber profil ausgewaehlt werden, da der Listener nur das Profil kennt
+   */
   def clearProfilPanel = {
     profil.resetPoints
     profil.choosenPanel.clearAll
-    ProfilMenue.currentPanel = profil.choosenPanel
+    Menue.currentPanel = profil.choosenPanel
   }
 
 }

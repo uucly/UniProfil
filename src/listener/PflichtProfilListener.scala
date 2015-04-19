@@ -5,9 +5,9 @@ package listener
 import java.awt.event.ItemEvent
 import java.awt.event.ItemListener
 import panels.InfoPanel
-import profils.Profil
+import profils.TProfil
 
-class PflichtProfilListener(private var creditPoints: Double,private val profil:Profil) extends ItemListener {
+class PflichtProfilListener(private var creditPoints: Double,private val profil:TProfil) extends ItemListener {
 
   override def itemStateChanged(e: ItemEvent): Unit = {
     val selected = e.getStateChange() equals ItemEvent.SELECTED

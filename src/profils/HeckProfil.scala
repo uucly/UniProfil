@@ -7,18 +7,18 @@ import scala.io.Source
 import panels.TModulPanel
 import listener.ProfilListener
 
-object HeckProfil extends Profil {
+object HeckProfil extends TProfil {
 
   _checkBox = new JCheckBoxMenuItem("Heck Profil")
   _checkBox.addItemListener(new ProfilListener(this))
   name = "Heck";
 
-  var wahlModul = Source.fromFile("Heck_Wahl.txt").getLines.toList;
+  wahlModul = Source.fromFile("Heck_Wahl.txt").getLines.toList;
 
   
   _pflichtMap = Map(("Rezente Geodynamik", 4), ("Seminar Erdsystembeobachtung", 1), ("SAR und InSAR-Fernerkundung", 3), ("Regionale Schwerefeldmodellierung", 3))
 
-  def load(panel: TModulPanel) = {
+  /*def load(panel: TModulPanel) = {
 
     choosenPanel = panel
 
@@ -34,9 +34,9 @@ object HeckProfil extends Profil {
     panel.add(new JLabel("                              Wahl"))
     panel.add(new JLabel("-----------------------------------------------------------------"))
 
-    val modulsToShow = loadWahlModule(wahlModul);
+    val modulsToShow = loadWahlModule();
     loadWahlFile(modulsToShow, panel)
     panel.revalidate()
-  }
+  }*/
   
 }

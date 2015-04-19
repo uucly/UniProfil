@@ -6,16 +6,16 @@ import javax.swing.JMenu
 import javax.swing.JLabel
 import panels.TModulPanel
 import panels.RightPanel
-import profils.Profil
+import profils.TProfil
 import profils.HinzProfil
 import profils.HennesProfil
 import profils.BreunigProfil
 import listener.LinkMouseListener
 import profils.HeckProfil
-import panels.WahlPanel
+import panels.LeftPanel
 import profils.ErgaenzungsProfil
 
-object ProfilMenue extends JMenuBar {
+object Menue extends JMenuBar {
 
   var currentPanel: TModulPanel = RightPanel
   var aufbauCreditPoints = 0d
@@ -69,14 +69,18 @@ object ProfilMenue extends JMenuBar {
   add(urlLink)
 
   //Functions
-  def isCurrentPanelInUse = (currentPanel._profil != null)
-  def unCheckCurrentProfilBox = currentPanel._profil._checkBox.setSelected(false)
-  def setCurrentProfil(profil: Profil) = currentPanel._profil = profil
+  def isCurrentPanelInUse = (currentPanel.getProfil != null)
+  def unCheckCurrentProfilBox = currentPanel.getProfil._checkBox.setSelected(false)
+  def setCurrentProfil(profil: TProfil) = currentPanel.setProfil(profil)
   def switchCurrentPanel() = {
     if (currentPanel == RightPanel)
-      currentPanel = WahlPanel
+      currentPanel = LeftPanel
     else
       currentPanel = RightPanel
+  }
+  
+  def getNotInUsePanel = {
+    if(currentPanel == RightPanel) RightPanel else LeftPanel
   }
 
  

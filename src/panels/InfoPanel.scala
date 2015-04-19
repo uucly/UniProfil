@@ -7,7 +7,7 @@ import javax.swing.JLabel
 import javax.swing.BoxLayout
 import javax.swing.JButton
 import listener.ClearButtonListener
-import menue.ProfilMenue
+import menue.Menue
 
 object InfoPanel extends JPanel {
 
@@ -19,7 +19,7 @@ object InfoPanel extends JPanel {
   def load = {
     removeAll()
     val textAufbau = new JLabel("Aufbaufächer")
-    val punkteAufbau = new JLabel("Punkte: " + ProfilMenue.aufbauCreditPoints + " von 32")
+    val punkteAufbau = new JLabel("Punkte: " + Menue.aufbauCreditPoints + " von 32")
 
     val textPflicht = new JLabel("Pflichtfächer")
     val punktePflicht = new JLabel("Punkte: " + sumPflichtPoints + " von " + sumOfPflicht)
@@ -28,10 +28,10 @@ object InfoPanel extends JPanel {
     val punkteWahl = new JLabel("Punkte: " + sumWahlPoints + " von " + (46 - sumOfPflicht))
 
     val textErg = new JLabel("Ergänzungsfächer")
-    val punkteErg = new JLabel("Punkte: " + ProfilMenue.ergaenungCreditPoints + " von 8")
+    val punkteErg = new JLabel("Punkte: " + Menue.ergaenungCreditPoints + " von 8")
 
     val textKey = new JLabel("Schlüsselqualifikationen")
-    val punkteKey = new JLabel("Punkte: " + ProfilMenue.keyCreditPoints + " von 4")
+    val punkteKey = new JLabel("Punkte: " + Menue.keyCreditPoints + " von 4")
     val gesamtPunkte = new JLabel("Gesamt: " + sumAll)
     val trenner = new JLabel("--------------------------------------------")
 
@@ -55,17 +55,17 @@ object InfoPanel extends JPanel {
 
   def sumOfPflicht = {
     try {
-      RightPanel._profil.getAllPoints + WahlPanel._profil.getAllPoints
+      RightPanel.getProfil.getAllPoints + LeftPanel.getProfil.getAllPoints
     } catch {
       case e: Exception => 0f
     }
   }
 
-  def sumAll = (ProfilMenue.aufbauCreditPoints + sumWahlPoints + sumPflichtPoints + ProfilMenue.ergaenungCreditPoints + ProfilMenue.keyCreditPoints)
+  def sumAll = (Menue.aufbauCreditPoints + sumWahlPoints + sumPflichtPoints + Menue.ergaenungCreditPoints + Menue.keyCreditPoints)
   
   def sumPflichtPoints = {
     try {
-      RightPanel._profil.pflichtPoints + WahlPanel._profil.pflichtPoints
+      RightPanel.getProfil.pflichtPoints + LeftPanel.getProfil.pflichtPoints
     } catch {
       case ex: Exception => 0f
     }
@@ -73,7 +73,7 @@ object InfoPanel extends JPanel {
 
   def sumWahlPoints = {
     try {
-      RightPanel._profil.wahlPoints + WahlPanel._profil.wahlPoints
+      RightPanel.getProfil.wahlPoints + LeftPanel.getProfil.wahlPoints
     } catch {
       case ex: Exception => 0f
     }
