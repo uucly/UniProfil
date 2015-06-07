@@ -1,6 +1,6 @@
 package panels
 
-object LeftPanel extends TModulPanel {
+object RightPanel extends TModulPanel {
 
-  name = "WahlPanel"
+  name = "RightPanel"
 }

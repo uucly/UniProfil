@@ -13,7 +13,6 @@ Einführung in die Geophysik II,4
 Einführung in die Kontinuumsmechanik,3
 Fernerkundung atmosphärischer Zustandsgrößen,4
 Flächenerfassung,3
-Flächenerfassung,3
 GIS-Analysen,3
 Geodateninfrastruktur und Web-Dienste,4
 Geodetic Application of SAR Interferometry,4

@@ -7,6 +7,10 @@ import java.awt.event.ItemListener
 import panels.InfoPanel
 import profils.TProfil
 import menue.Menue
+import wahlPflicht.WahlPflichtManager
+import panels.RightPanel
+import panels.LeftPanel
+import panels.LeftPanel
 
 class ProfilListener(private val profil: TProfil) extends ItemListener {
 
@@ -17,6 +21,19 @@ class ProfilListener(private val profil: TProfil) extends ItemListener {
       updateProfilPanel
     else
       clearProfilPanel
+      
+      if(LeftPanel.getProfil != null){
+        LeftPanel.getProfil.resetPoints
+        LeftPanel.buttons.clear
+      } 
+      if(RightPanel.getProfil != null) {
+        RightPanel.getProfil.resetPoints
+        RightPanel.buttons.clear
+      }
+      
+      RightPanel.load
+      LeftPanel.load
+      InfoPanel.load
   }
 
   /////////////

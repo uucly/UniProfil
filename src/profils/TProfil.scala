@@ -23,21 +23,11 @@ trait TProfil {
   var pflichtPoints = 0d
   var wahlPoints = 0d
 
-  //def load(panel: TModulPanel)
   def getAllPoints = _pflichtMap.foldLeft(0)(_ + _._2)
   def resetPoints = {
-    pflichtPoints = 0
-    wahlPoints = 0
+    pflichtPoints = 0d
+    wahlPoints = 0d
   }
-
-  def addProfil(list: Map[String, Int], panel: JPanel) = {
-    for (pflicht <- list) {
-      val button = new JRadioButton(pflicht._1)
-      button.addItemListener(new PflichtProfilListener(pflicht._2, this))
-      panel.add(button)
-    }
-  }
-
   def loadWahlModule() = {
     WahlPflichtManager.wahlPflichtList.filter(modul => wahlModul.contains(modul.getName))
   }

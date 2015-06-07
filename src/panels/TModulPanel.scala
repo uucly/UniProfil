@@ -15,6 +15,7 @@ import listener.WahlProfilListener
 trait TModulPanel extends JPanel {
   private var _profil: TProfil = null
   var name: String = null
+  var buttons: MutableList[JRadioButton] = new MutableList
 
   def clearAll = {
     _profil = null
@@ -26,23 +27,43 @@ trait TModulPanel extends JPanel {
   def setProfil(profil: TProfil) = _profil = profil
 
   def load() = {
-    println("Hier")
-    println(name)
-    println(_profil .name )
-    removeAll();
-    add(new JLabel("-----------------------------------------------------------------"))
-    add(new JLabel("                              Pflicht"))
-    add(new JLabel("-----------------------------------------------------------------"))
-
-    addProfil(_profil._pflichtMap)
-
-    add(new JLabel("-----------------------------------------------------------------"))
-    add(new JLabel("                              Wahl"))
-    add(new JLabel("-----------------------------------------------------------------"))
-
-    val modulsToShow = _profil.loadWahlModule();
-    loadWahlFile(modulsToShow)
-    revalidate()
+    if (_profil != null) {
+      removeAll();
+      val ownWidth = 138
+      add(new JLabel(getLines((ownWidth).toInt)))
+      add(new JLabel(getSpace((ownWidth/2).toInt-3)+"Pflicht"))
+      add(new JLabel(getLines((ownWidth).toInt)))
+      
+      addProfil(_profil._pflichtMap)
+      add(new JLabel(getLines((ownWidth).toInt)))
+      add(new JLabel(getSpace((ownWidth/2).toInt-2)+"Wahl"))
+      add(new JLabel(getLines((ownWidth).toInt)))
+      val modulsToShow = _profil.loadWahlModule();
+      if (buttons.isEmpty) {
+        loadWahlFile(modulsToShow)
+      } else {
+        buttons.foreach(button => add(button))
+      }
+      revalidate()
+    }
+  }
+  
+  private def getLines(lines:Int):String = {
+	val buffer = new StringBuffer
+    var n=0
+    for(n <- 1 to lines){
+      buffer.append(".")
+    }
+    return buffer.toString()
+  }
+  
+  private def getSpace(space:Int):String = {
+    val buffer = new StringBuffer
+    var n=0
+    for(n <- 1 to space){
+      buffer.append(" ")
+    }
+    return buffer.toString()
   }
 
   def addProfil(list: Map[String, Int]) = {
@@ -51,20 +72,19 @@ trait TModulPanel extends JPanel {
       button.addItemListener(new PflichtProfilListener(pflicht._2, _profil))
       add(button)
     }
+
   }
 
   def loadWahlFile(moduls: MutableList[WahlPflichtModul]) = {
-    val panel = loadOtherPanel
     moduls.foreach(modul => {
       val button = new JRadioButton(modul.getName)
-      button.addItemListener(new WahlProfilListener(modul, _profil, panel))
-      if (modul.inUse)
-        button.setEnabled(false)
+      button.addItemListener(new WahlProfilListener(modul, _profil))
+      buttons += button
       add(button)
     })
   }
 
-  def loadOtherPanel = if(this == RightPanel) RightPanel else LeftPanel
+  def loadOtherPanel = if (this == LeftPanel) LeftPanel else RightPanel
   // wird ausgefuehrt
   setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS))
 

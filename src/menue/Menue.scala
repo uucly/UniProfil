@@ -5,19 +5,19 @@ import javax.swing.JMenuBar
 import javax.swing.JMenu
 import javax.swing.JLabel
 import panels.TModulPanel
-import panels.RightPanel
 import profils.TProfil
 import profils.HinzProfil
 import profils.HennesProfil
 import profils.BreunigProfil
 import listener.LinkMouseListener
 import profils.HeckProfil
-import panels.LeftPanel
+import panels.RightPanel
 import profils.ErgaenzungsProfil
+import panels.LeftPanel
 
 object Menue extends JMenuBar {
 
-  var currentPanel: TModulPanel = RightPanel
+  var currentPanel: TModulPanel = LeftPanel
   var aufbauCreditPoints = 0d
   var ergaenungCreditPoints = 0d
   var keyCreditPoints = 0d
@@ -73,14 +73,14 @@ object Menue extends JMenuBar {
   def unCheckCurrentProfilBox = currentPanel.getProfil._checkBox.setSelected(false)
   def setCurrentProfil(profil: TProfil) = currentPanel.setProfil(profil)
   def switchCurrentPanel() = {
-    if (currentPanel == RightPanel)
-      currentPanel = LeftPanel
-    else
+    if (currentPanel == LeftPanel)
       currentPanel = RightPanel
+    else
+      currentPanel = LeftPanel
   }
   
   def getNotInUsePanel = {
-    if(currentPanel == RightPanel) RightPanel else LeftPanel
+    if(currentPanel == LeftPanel) LeftPanel else RightPanel
   }
 
  

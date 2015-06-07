@@ -2,7 +2,6 @@ package wahlPflicht
 
 import scala.collection.mutable.MutableList
 import scala.io.Source
-import wahlPflicht.WahlPflichtModul
 
 object WahlPflichtManager {
 

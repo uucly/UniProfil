@@ -13,8 +13,7 @@ object InfoPanel extends JPanel {
 
   setLayout(new BoxLayout(this, BoxLayout.Y_AXIS))
   load
-  
-  
+
   //Functions
   def load = {
     removeAll()
@@ -34,7 +33,7 @@ object InfoPanel extends JPanel {
     val punkteKey = new JLabel("Punkte: " + Menue.keyCreditPoints + " von 4")
     val gesamtPunkte = new JLabel("Gesamt: " + sumAll)
     val trenner = new JLabel("--------------------------------------------")
-
+    
     val clearButton = new JButton("clear profil points")
     clearButton.addMouseListener(new ClearButtonListener)
     add(textAufbau)
@@ -55,17 +54,17 @@ object InfoPanel extends JPanel {
 
   def sumOfPflicht = {
     try {
-      RightPanel.getProfil.getAllPoints + LeftPanel.getProfil.getAllPoints
+      LeftPanel.getProfil.getAllPoints + RightPanel.getProfil.getAllPoints
     } catch {
       case e: Exception => 0f
     }
   }
 
   def sumAll = (Menue.aufbauCreditPoints + sumWahlPoints + sumPflichtPoints + Menue.ergaenungCreditPoints + Menue.keyCreditPoints)
-  
+
   def sumPflichtPoints = {
     try {
-      RightPanel.getProfil.pflichtPoints + LeftPanel.getProfil.pflichtPoints
+      LeftPanel.getProfil.pflichtPoints + RightPanel.getProfil.pflichtPoints
     } catch {
       case ex: Exception => 0f
     }
@@ -73,7 +72,7 @@ object InfoPanel extends JPanel {
 
   def sumWahlPoints = {
     try {
-      RightPanel.getProfil.wahlPoints + LeftPanel.getProfil.wahlPoints
+      LeftPanel.getProfil.wahlPoints + RightPanel.getProfil.wahlPoints
     } catch {
       case ex: Exception => 0f
     }
