@@ -6,6 +6,9 @@ import javax.swing.JLabel
 import scala.io.Source
 import panels.TModulPanel
 import listener.ProfilListener
+import java.io.InputStreamReader
+import java.io.BufferedReader
+import scala.io.BufferedSource
 
 object BreunigProfil extends TProfil {
 
@@ -14,26 +17,6 @@ object BreunigProfil extends TProfil {
   name = "Breunig"
   _pflichtMap = Map(("GeoDB", 4), ("3D/4D GIS", 4), ("Projekt Geoinformatik", 4))
 
-  wahlModul = Source.fromFile("Breunig_Wahl.txt").getLines.toList;
-  
-  /*def load(panel: TModulPanel) = {
-
-    choosenPanel = panel
-    panel.removeAll()
-
-    // Pflicht
-    panel.add(new JLabel("-----------------------------------------------------------------"))
-    panel.add(new JLabel("                              Pflicht"))
-    panel.add(new JLabel("-----------------------------------------------------------------"))
-
-    addProfil(_pflichtMap, panel)
-
-    panel.add(new JLabel("-----------------------------------------------------------------"))
-    panel.add(new JLabel("                              Wahl"))
-    panel.add(new JLabel("-----------------------------------------------------------------"))
-
-    val modulsToShow = loadWahlModule();
-    loadWahlFile(modulsToShow, panel)
-    panel.revalidate()
-  }*/
+  val input = getClass().getResourceAsStream("/Breunig_Wahl.txt")
+  wahlModul = new BufferedSource(input).getLines.toList
 }

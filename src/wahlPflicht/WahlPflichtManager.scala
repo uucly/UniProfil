@@ -2,6 +2,7 @@ package wahlPflicht
 
 import scala.collection.mutable.MutableList
 import scala.io.Source
+import scala.io.BufferedSource
 
 object WahlPflichtManager {
 
@@ -11,7 +12,8 @@ object WahlPflichtManager {
   
   def loadWahlFile(fileName: String) : MutableList[WahlPflichtModul] = {
     val list = new MutableList[WahlPflichtModul]();
-    val fileLines = Source.fromFile(fileName).getLines
+    val input = getClass().getResourceAsStream("/"+fileName)
+    val fileLines =  new BufferedSource(input).getLines
     fileLines.foreach(line => {
       val l = line.split(",")
       list += (new WahlPflichtModul(l(0),l(1).toDouble));
