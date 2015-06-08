@@ -17,7 +17,7 @@ trait TProfil {
   var name: String = null
   var choosenPanel: TModulPanel = null
   var _checkBox: JCheckBoxMenuItem = null
-  var _pflichtMap: Map[String, Int] = null
+  var _pflichtMap: Map[String, Int] = Map()
   var wahlModul: List[String] = null;
 
   var pflichtPoints = 0d

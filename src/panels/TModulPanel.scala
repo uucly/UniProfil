@@ -31,36 +31,41 @@ trait TModulPanel extends JPanel {
       removeAll();
       val ownWidth = 138
       add(new JLabel(getLines((ownWidth).toInt)))
-      add(new JLabel(getSpace((ownWidth/2).toInt-3)+"Pflicht"))
+      add(new JLabel(getSpace((ownWidth / 2).toInt - 3) + "Pflicht"))
       add(new JLabel(getLines((ownWidth).toInt)))
-      
+
       addProfil(_profil._pflichtMap)
       add(new JLabel(getLines((ownWidth).toInt)))
-      add(new JLabel(getSpace((ownWidth/2).toInt-2)+"Wahl"))
+      add(new JLabel(getSpace((ownWidth / 2).toInt - 2) + "Wahl"))
       add(new JLabel(getLines((ownWidth).toInt)))
       val modulsToShow = _profil.loadWahlModule();
       if (buttons.isEmpty) {
         loadWahlFile(modulsToShow)
       } else {
-        buttons.foreach(button => add(button))
+        buttons.foreach(button => {
+          add(button)
+          if (loadOtherPanel._profil != null && contains(loadOtherPanel._profil._pflichtMap, button.getText()))
+            button.setEnabled(false)
+        })
+
       }
       revalidate()
     }
   }
-  
-  private def getLines(lines:Int):String = {
-	val buffer = new StringBuffer
-    var n=0
-    for(n <- 1 to lines){
+
+  private def getLines(lines: Int): String = {
+    val buffer = new StringBuffer
+    var n = 0
+    for (n <- 1 to lines) {
       buffer.append(".")
     }
     return buffer.toString()
   }
-  
-  private def getSpace(space:Int):String = {
+
+  private def getSpace(space: Int): String = {
     val buffer = new StringBuffer
-    var n=0
-    for(n <- 1 to space){
+    var n = 0
+    for (n <- 1 to space) {
       buffer.append(" ")
     }
     return buffer.toString()
@@ -81,10 +86,20 @@ trait TModulPanel extends JPanel {
       button.addItemListener(new WahlProfilListener(modul, _profil))
       buttons += button
       add(button)
+      println("Other " + loadOtherPanel)
+      if (loadOtherPanel._profil != null && contains(loadOtherPanel._profil._pflichtMap, modul.getName))
+        button.setEnabled(false)
     })
   }
 
-  def loadOtherPanel = if (this == LeftPanel) LeftPanel else RightPanel
+  def loadOtherPanel = if (this == LeftPanel) RightPanel else LeftPanel
+
+  def contains(map: Map[String, Int], containingName: String): Boolean = {
+    for (name <- map) {
+      if (name._1.equals(containingName)) return true
+    }
+    return false
+  }
   // wird ausgefuehrt
   setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS))
 
