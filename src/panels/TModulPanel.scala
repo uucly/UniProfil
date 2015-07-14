@@ -16,7 +16,8 @@ trait TModulPanel extends JPanel {
   private var _profil: TProfil = null
   var name: String = null
   var buttons: MutableList[JRadioButton] = new MutableList
-
+  var pflichtButtons: MutableList[JRadioButton] = new MutableList
+  
   def clearAll = {
     _profil = null
     removeAll()
@@ -33,12 +34,17 @@ trait TModulPanel extends JPanel {
       add(new JLabel(getLines((ownWidth).toInt)))
       add(new JLabel(getSpace((ownWidth / 2).toInt - 3) + "Pflicht"))
       add(new JLabel(getLines((ownWidth).toInt)))
-
-      addProfil(_profil._pflichtMap)
+      if(pflichtButtons.isEmpty){
+    	  addProfil(_profil._pflichtMap)
+      } else {
+    	  pflichtButtons.foreach(button => add(button))
+      }
       add(new JLabel(getLines((ownWidth).toInt)))
       add(new JLabel(getSpace((ownWidth / 2).toInt - 2) + "Wahl"))
       add(new JLabel(getLines((ownWidth).toInt)))
       val modulsToShow = _profil.loadWahlModule();
+      
+      
       if (buttons.isEmpty) {
         loadWahlFile(modulsToShow)
       } else {
@@ -75,18 +81,18 @@ trait TModulPanel extends JPanel {
     for (pflicht <- list) {
       val button = new JRadioButton(pflicht._1)
       button.addItemListener(new PflichtProfilListener(pflicht._2, _profil))
+      pflichtButtons += button
       add(button)
     }
 
   }
-
+  
   def loadWahlFile(moduls: MutableList[WahlPflichtModul]) = {
     moduls.foreach(modul => {
       val button = new JRadioButton(modul.getName)
       button.addItemListener(new WahlProfilListener(modul, _profil))
       buttons += button
       add(button)
-      println("Other " + loadOtherPanel)
       if (loadOtherPanel._profil != null && contains(loadOtherPanel._profil._pflichtMap, modul.getName))
         button.setEnabled(false)
     })

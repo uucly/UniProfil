@@ -25,10 +25,12 @@ class ProfilListener(private val profil: TProfil) extends ItemListener {
       if(LeftPanel.getProfil != null){
         LeftPanel.getProfil.resetPoints
         LeftPanel.buttons.clear
+        LeftPanel.pflichtButtons.clear
       } 
       if(RightPanel.getProfil != null) {
         RightPanel.getProfil.resetPoints
         RightPanel.buttons.clear
+        RightPanel.pflichtButtons.clear
       }
       
       RightPanel.load
