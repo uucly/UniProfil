@@ -9,6 +9,7 @@ import menue.Menue
 
 class AufbauProfilListener(private var creditPoints: Double) extends ItemListener {
 
+
   override def itemStateChanged(e: ItemEvent): Unit = {
     val selected = e.getStateChange() equals ItemEvent.SELECTED
 
